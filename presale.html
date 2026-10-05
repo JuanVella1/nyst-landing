@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presale, NYst</title>
+<script>document.documentElement.className='js'</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='24' font-size='22' font-weight='700' text-anchor='middle' fill='%23FFB000' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <filter id="wash" filterUnits="userSpaceOnUse" x="0" y="0" width="400" height="440" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.018 0.03" numOctaves="3" seed="11" result="n"/>
+    <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.30  0 0 0 0 0.32  0 0 0 0 0.35  0 0 0 1.7 -0.62" result="blot"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="1" seed="3" result="g"/>
+    <feColorMatrix in="g" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 -0.36" result="fleck"/>
+    <feComposite in="blot" in2="SourceAlpha" operator="in" result="b1"/>
+    <feComposite in="fleck" in2="SourceAlpha" operator="in" result="b2"/>
+    <feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="b1"/><feMergeNode in="b2"/></feMerge>
+  </filter>
+</defs></svg>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <div><span class="intro-mark">NYst</span><span class="intro-count"><b id="introN">00</b> OF 40</span></div>
+</div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+<div class="tape" aria-hidden="true"><div class="tape-track" id="tapeTrack"></div><i class="progress" id="progress"></i></div>
+<header class="site-header">
+  <div class="bar">
+    <a class="wordmark" href="index.html#top" aria-label="NYst, back to top">NYst</a>
+    <nav class="nav" aria-label="Main">
+      <a href="presale.html"><span class="bullet">P</span>Presale</a>
+      <a href="stock.html"><span class="bullet">R</span>Remaining stock</a>
+      <a href="gallery.html"><span class="bullet">G</span>Gallery</a>
+      <a href="collections.html"><span class="bullet">C</span>Collections</a>
+    </nav>
+    <button class="cart-btn" type="button" id="cartBtn" data-action="open-cart" aria-label="Open cart">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      Cart <span class="count" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+<main id="main">
+  <section class="sec sec-graphite" id="board" aria-labelledby="boardTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="boardTitle" class="h-mask"><span>Edition board</span></h2>
+        <div class="sec-intro"><p>Every piece exists forty times. Each square below is one numbered unit of Collection 03, and it fills the moment that unit is claimed.</p></div>
+      </div>
+      <div class="board-top"><p id="boardSum"></p></div>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th class="hide-s">Code</th><th>Piece</th><th>Units</th><th>Claimed</th><th class="hide-s">Price</th><th>Status</th></tr></thead>
+          <tbody id="boardBody"></tbody>
+        </table>
+      </div>
+      <ul class="legend" aria-label="Legend">
+        <li><span class="sw"></span>Available</li>
+        <li><span class="sw on"></span><span id="legendClaimed">Reserved</span></li>
+        <li><span class="sw mine"></span>Yours</li>
+      </ul>
+    </div>
+  </section>
+  <section class="sec sec-light" id="presale" aria-labelledby="presaleTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="presaleTitle" class="h-mask"><span>Presale</span></h2>
+        <div class="sec-intro"><p id="presaleIntro"></p></div>
+      </div>
+      <div class="pre-top">
+        <div class="cd" id="countdown" role="timer" aria-label="Time left in the presale">
+          <div><b id="cd-d">00</b><span>days</span></div>
+          <div><b id="cd-h">00</b><span>hours</span></div>
+          <div><b id="cd-m">00</b><span>minutes</span></div>
+          <div><b id="cd-s">00</b><span>seconds</span></div>
+        </div>
+        <div class="chips" id="presaleChips" role="group" aria-label="Filter the presale"></div>
+      </div>
+      <div class="rail" id="presaleRail" data-cursor="big"></div>
+      <div class="rail-ctl">
+        <button class="icon-btn" type="button" data-action="rail" data-rail="presaleRail" data-dir="-1" aria-label="Scroll the presale back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="rail-bar" aria-hidden="true"><i id="presaleRailBar"></i></div>
+        <button class="icon-btn" type="button" data-action="rail" data-rail="presaleRail" data-dir="1" aria-label="Scroll the presale forward"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="foot-in">
+    <div>
+      <span class="wordmark">NYst</span>
+      <p>A luxury streetwear brand project developed for a university course. Orders on this site are a demonstration and no payment is processed.</p>
+    </div>
+    <details class="demo">
+      <summary>Class demo controls</summary>
+      <p>Use these controls during a presentation to show each stage of a collection without waiting for the presale date.</p>
+      <div class="demo-actions">
+        <button class="btn" type="button" data-action="demo" data-phase="presale">Show presale open</button>
+        <button class="btn" type="button" data-action="demo" data-phase="stock">Show presale closed</button>
+        <button class="btn" type="button" data-action="demo" data-phase="auto">Follow the real date</button>
+        <button class="btn" type="button" id="simBtn" data-action="sim" aria-pressed="false">Simulate live claims</button>
+        <button class="btn" type="button" data-action="reset">Reset all data</button>
+      </div>
+    </details>
+  </div>
+</footer>
+<div class="scrim" id="scrim" data-action="close-layer"></div>
+<aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+  <div class="layer-head">
+    <h2 id="cartTitle">Cart</h2>
+    <button class="icon-btn" type="button" data-action="close-layer" aria-label="Close cart">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
+  <div class="drawer-scroll">
+    <ul class="lines" id="cartLines"></ul>
+    <div class="orders" id="orders"></div>
+  </div>
+  <div class="drawer-foot">
+    <div class="sum"><span>Subtotal</span><span id="cartTotal">$0</span></div>
+    <small>Edition numbers are assigned when the order is placed.</small>
+    <button class="btn block" type="button" id="checkoutBtn" data-action="checkout">Go to checkout</button>
+  </div>
+</aside>
+<div class="modal" id="checkout" role="dialog" aria-modal="true" aria-labelledby="coTitle" data-action="close-layer-bg">
+  <div class="modal-card" id="checkoutBody"></div>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery viewer"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<noscript><p style="padding:24px;background:#fff;color:#000;position:relative;z-index:10">This website needs JavaScript to run the cart and the edition board.</p></noscript>
+
+<script src="app.js"></script>
+</body>
+</html>
