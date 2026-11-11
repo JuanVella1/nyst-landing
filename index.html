@@ -10,6 +10,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='24' font-size='22' font-weight='700' text-anchor='middle' fill='%23FFB000' font-family='Georgia,serif'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
+<style>
+.reg-dialog{width:min(560px,calc(100% - 32px));max-height:calc(100vh - 32px);margin:auto;padding:64px clamp(20px,4vw,38px) clamp(20px,4vw,38px);border:0;border-radius:var(--r);background:#fff;color:var(--ink);overflow:auto}
+.reg-dialog::backdrop{background:rgba(0,0,0,.6)}
+.reg-dialog[open]{animation:regIn .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes regIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.reg-dialog[open]{animation:none}}
+.reg-dialog h2{margin:0 0 6px;font:500 2.3rem/1 var(--serif);letter-spacing:-.02em}
+.reg-dialog h2:focus{outline:none}
+.reg-x{position:absolute;top:14px;right:14px}
+.reg-lead{margin:0 0 20px}
+.reg-dialog .form-grid{margin-bottom:18px}
+</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
@@ -148,6 +160,77 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <noscript><p style="padding:24px;background:#fff;color:#000;position:relative;z-index:10">This website needs JavaScript to run the cart and the edition board.</p></noscript>
 
+<dialog class="reg-dialog" id="registerDialog" aria-labelledby="regTitle">
+  <button class="icon-btn reg-x" type="button" id="regClose" aria-label="Close registration"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <div id="regFormView">
+    <h2 id="regTitle">Join the list</h2>
+    <p class="note reg-lead">Register to hear about the next collection before its presale opens. This is a demonstration form for a course project: nothing you type is saved or sent anywhere.</p>
+    <form id="registerForm">
+      <div class="form-grid">
+        <div class="field full"><label for="r-name">Full name</label><input id="r-name" name="name" required autocomplete="name" autofocus></div>
+        <div class="field"><label for="r-email">Email</label><input id="r-email" name="email" type="email" required autocomplete="email"></div>
+        <div class="field"><label for="r-birth">Date of birth</label><input id="r-birth" name="birth" type="date" required autocomplete="bday"></div>
+      </div>
+      <button class="btn block" type="submit">Register</button>
+    </form>
+  </div>
+  <div id="regDoneView" hidden>
+    <h2 id="regDoneTitle"></h2>
+    <p class="note reg-lead">You are on the list.</p>
+    <button class="btn block" type="button" id="regDoneClose">Close</button>
+  </div>
+</dialog>
 <script src="app.js"></script>
+<script>
+(function () {
+  var dlg = document.getElementById('registerDialog');
+  if (!dlg || typeof dlg.showModal !== 'function') return;
+  var form = document.getElementById('registerForm');
+  var nameEl = document.getElementById('r-name'), birth = document.getElementById('r-birth');
+  var formView = document.getElementById('regFormView'), doneView = document.getElementById('regDoneView');
+  var doneTitle = document.getElementById('regDoneTitle');
+  var d = new Date();
+  birth.max = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+
+  function openIt() {
+    try {
+      if (sessionStorage.getItem('nyst-register') === '1') return;
+      sessionStorage.setItem('nyst-register', '1');
+    } catch (e) { /* ignore */ }
+    document.documentElement.style.overflow = 'hidden';
+    dlg.showModal();
+  }
+  dlg.addEventListener('close', function () {
+    document.documentElement.style.overflow = '';
+    form.reset();
+    formView.hidden = false;
+    doneView.hidden = true;
+  });
+  document.getElementById('regClose').addEventListener('click', function () { dlg.close(); });
+  document.getElementById('regDoneClose').addEventListener('click', function () { dlg.close(); });
+  dlg.addEventListener('click', function (e) {
+    if (e.target !== dlg) return;
+    var r = dlg.getBoundingClientRect();
+    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dlg.close();
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var first = (nameEl.value || '').trim().split(/\s+/)[0] || '';
+    doneTitle.textContent = 'Thank you' + (first ? ', ' + first : '') + '.';
+    form.reset();
+    formView.hidden = true;
+    doneView.hidden = false;
+    doneTitle.setAttribute('tabindex', '-1');
+    doneTitle.focus();
+  });
+
+  /* Wait for the intro curtain to leave, then show the window once per session. */
+  var tries = 0;
+  (function wait() {
+    if (!document.getElementById('intro') || tries++ > 40) setTimeout(openIt, 700);
+    else setTimeout(wait, 200);
+  })();
+})();
+</script>
 </body>
 </html>

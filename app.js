@@ -32,44 +32,44 @@ const CONFIG = {
   editionSize: 40,
   categories: [['all', 'All'], ['hoodies', 'Hoodies'], ['tees', 'Tees'], ['pants', 'Pants'], ['hats', 'Hats']],
   products: [
-    { id: 'hoodie-white', code: 'HW', name: 'White hoodie', cat: 'hoodies', type: 'hoodie', tone: 'white', sizes: AP, presalePrice: 480000, regularPrice: 550000, seedClaimed: 31, image: '', blurb: 'Hooded sweatshirt in white. Edition of 40, every unit numbered.' },
-    { id: 'hoodie-black', code: 'HB', name: 'Black hoodie', cat: 'hoodies', type: 'hoodie', tone: 'black', sizes: AP, presalePrice: 480000, regularPrice: 550000, seedClaimed: 36, image: '', blurb: 'Hooded sweatshirt in black. Edition of 40, every unit numbered.' },
-    { id: 'hoodie-grey', code: 'HG', name: 'Grey washed hoodie', cat: 'hoodies', type: 'hoodie', tone: 'wash', sizes: AP, presalePrice: 480000, regularPrice: 550000, seedClaimed: 22, image: '', blurb: 'Hooded sweatshirt in a washed grey. Edition of 40, every unit numbered.' },
-    { id: 'tee-white', code: 'TW', name: 'White tee', cat: 'tees', type: 'tee', tone: 'white', sizes: AP, presalePrice: 220000, regularPrice: 260000, seedClaimed: 18, image: '', blurb: 'Tee in white. Edition of 40, every unit numbered.' },
-    { id: 'tee-black', code: 'TB', name: 'Black tee', cat: 'tees', type: 'tee', tone: 'black', sizes: AP, presalePrice: 220000, regularPrice: 260000, seedClaimed: 27, image: '', blurb: 'Tee in black. Edition of 40, every unit numbered.' },
-    { id: 'tee-grey', code: 'TG', name: 'Grey washed tee', cat: 'tees', type: 'tee', tone: 'wash', sizes: AP, presalePrice: 220000, regularPrice: 260000, seedClaimed: 12, image: '', blurb: 'Tee in a washed grey. Edition of 40, every unit numbered.' },
-    { id: 'parachute', code: 'PP', name: 'Parachute pants', cat: 'pants', type: 'parachute', tone: 'black', sizes: PN, presalePrice: 420000, regularPrice: 490000, seedClaimed: 25, image: '', blurb: 'Parachute pants with a gathered ankle. Edition of 40, every unit numbered.' },
-    { id: 'cargo', code: 'PC', name: 'Cargo pants', cat: 'pants', type: 'cargo', tone: 'wash', sizes: PN, presalePrice: 420000, regularPrice: 490000, seedClaimed: 29, image: '', blurb: 'Cargo pants with large thigh pockets. Edition of 40, every unit numbered.' },
-    { id: 'cap', code: 'CP', name: 'Five panel cap', cat: 'hats', type: 'cap', tone: 'white', sizes: OS, presalePrice: 160000, regularPrice: 190000, seedClaimed: 15, image: '', blurb: 'Five panel cap with an adjustable back. Edition of 40, every unit numbered.' },
-    { id: 'bucket', code: 'BK', name: 'Bucket hat', cat: 'hats', type: 'bucket', tone: 'wash', sizes: OS, presalePrice: 160000, regularPrice: 190000, seedClaimed: 9, image: '', blurb: 'Bucket hat in a washed grey. Edition of 40, every unit numbered.' },
-    { id: 'beanie', code: 'BN', name: 'Beanie', cat: 'hats', type: 'beanie', tone: 'black', sizes: OS, presalePrice: 160000, regularPrice: 190000, seedClaimed: 20, image: '', blurb: 'Ribbed beanie in black. Edition of 40, every unit numbered.' }
+    { id: 'hoodie-white', code: 'HW', name: 'White hoodie', cat: 'hoodies', type: 'hoodie', tone: 'white', sizes: AP, presalePrice: 480000, regularPrice: 550000, seedClaimed: 31, image: 'images/Collection/nystbogotasubwayhoodie.png', blurb: 'Hooded sweatshirt in white. Edition of 40, every unit numbered.' },
+    { id: 'hoodie-black', code: 'HB', name: 'Black hoodie', cat: 'hoodies', type: 'hoodie', tone: 'black', sizes: AP, presalePrice: 480000, regularPrice: 550000, seedClaimed: 36, image: 'images/Collection/blacknystbogotasubwayhoodie.png', blurb: 'Hooded sweatshirt in black. Edition of 40, every unit numbered.' },
+    { id: 'hoodie-grey', code: 'HG', name: 'Grey washed hoodie', cat: 'hoodies', type: 'hoodie', tone: 'wash', sizes: AP, presalePrice: 480000, regularPrice: 550000, seedClaimed: 22, image: 'images/Collection/graynystbogotasubwayhoodie.png', blurb: 'Hooded sweatshirt in a washed grey. Edition of 40, every unit numbered.' },
+    { id: 'tee-white', code: 'TW', name: 'White tee', cat: 'tees', type: 'tee', tone: 'white', sizes: AP, presalePrice: 220000, regularPrice: 260000, seedClaimed: 18, image: 'images/Collection/nystbogotasubwaystreetweartee.png', blurb: 'Tee in white. Edition of 40, every unit numbered.' },
+    { id: 'tee-black', code: 'TB', name: 'Black tee', cat: 'tees', type: 'tee', tone: 'black', sizes: AP, presalePrice: 220000, regularPrice: 260000, seedClaimed: 27, image: 'images/Collection/blacknystbogotasubwaytshirt.png', blurb: 'Tee in black. Edition of 40, every unit numbered.' },
+    { id: 'tee-grey', code: 'TG', name: 'Grey washed tee', cat: 'tees', type: 'tee', tone: 'wash', sizes: AP, presalePrice: 220000, regularPrice: 260000, seedClaimed: 12, image: 'images/Collection/nystbogotasubwaygraphictee.png', blurb: 'Tee in a washed grey. Edition of 40, every unit numbered.' },
+    { id: 'parachute', code: 'PP', name: 'Parachute pants', cat: 'pants', type: 'parachute', tone: 'black', sizes: PN, presalePrice: 420000, regularPrice: 490000, seedClaimed: 25, image: 'images/Collection/blacknystcargoparachutepants.png', blurb: 'Parachute pants with a gathered ankle. Edition of 40, every unit numbered.' },
+    { id: 'cargo', code: 'PC', name: 'Cargo pants', cat: 'pants', type: 'cargo', tone: 'wash', sizes: PN, presalePrice: 420000, regularPrice: 490000, seedClaimed: 29, image: 'images/Collection/graywashednystcargojeans.png', blurb: 'Cargo pants with large thigh pockets. Edition of 40, every unit numbered.' },
+    { id: 'cap', code: 'CP', name: 'Five panel cap', cat: 'hats', type: 'cap', tone: 'white', sizes: OS, presalePrice: 160000, regularPrice: 190000, seedClaimed: 15, image: 'images/Collection/nystbogotasubwaystreetwearcap.png', blurb: 'Five panel cap with an adjustable back. Edition of 40, every unit numbered.' },
+    { id: 'bucket', code: 'BK', name: 'Bucket hat', cat: 'hats', type: 'bucket', tone: 'wash', sizes: OS, presalePrice: 160000, regularPrice: 190000, seedClaimed: 9, image: 'images/Collection/urbangraynystutilitybuckethat.png', blurb: 'Bucket hat in a washed grey. Edition of 40, every unit numbered.' },
+    { id: 'beanie', code: 'BN', name: 'Beanie', cat: 'hats', type: 'beanie', tone: 'black', sizes: OS, presalePrice: 160000, regularPrice: 190000, seedClaimed: 20, image: 'images/Collection/nystbogotasubwaybeanie.png', blurb: 'Ribbed beanie in black. Edition of 40, every unit numbered.' }
   ],
   gallery: {
     runways: [
-      { title: 'Runway, look 1', src: '' }, { title: 'Runway, look 2', src: '' }, { title: 'Runway, look 3', src: '' },
-      { title: 'Runway, look 4', src: '' }, { title: 'Runway, look 5', src: '' }, { title: 'Runway, finale', src: '' }
+      { title: 'Runway, look 1', src: 'images/Runway/urbansubwayfashionrunway4.png' }, { title: 'Runway, look 2', src: 'images/Runway/nystbogotasubwaystreetwearrunway2.png' }, { title: 'Runway, look 3', src: 'images/Runway/monochromenysturbanrunway3.png' },
+      { title: 'Runway, look 4', src: 'images/Runway/nystbogotasubwaybackstage4.png' }, { title: 'Runway, look 5', src: 'images/Runway/grittybogotasubwaystreetwearrunway5.png' }, { title: 'Runway, finale', src: 'images/Runway/neonbogotasubwaystreetwearrunway6.png' }
     ],
     storylines: [
       { number: '03', title: 'The arrival', text: 'The current collection, followed from the studio to the streets of the city.',
         frames: [
-          { title: 'Studio, the first fitting', ratio: '4/3', src: '' }, { title: 'Street, early morning', ratio: '3/4', src: '' },
-          { title: 'Rooftop', ratio: '3/4', src: '' }, { title: 'Subway platform', ratio: '4/3', src: '' }] },
+          { title: 'Studio, the first fitting', ratio: '4/3', src: 'images/galleria/nystbackstagerunwayprep3.png' }, { title: 'Street, early morning', ratio: '3/4', src: 'images/galleria/nysturbandesignstudiocollaborators1.png' },
+          { title: 'Rooftop', ratio: '3/4', src: 'images/galleria/grittynystgarmentworkshopmontage2.png' }, { title: 'Subway platform', ratio: '4/3', src: 'images/galleria/nystbogotasubwayrunway1.png' }] },
       { number: '02', title: 'The second act', text: 'The second collection, told in four photographs.',
         frames: [
-          { title: 'Backstage', ratio: '4/3', src: '' }, { title: 'Crosswalk', ratio: '3/4', src: '' },
-          { title: 'Fire escape', ratio: '3/4', src: '' }, { title: 'After the show', ratio: '4/3', src: '' }] },
+          { title: 'Backstage', ratio: '4/3', src: 'images/galleria/backstagestreetwearstylingroom3.png' }, { title: 'Crosswalk', ratio: '3/4', src: 'images/galleria/nystindustrialstreetwearrunway4.png' },
+          { title: 'Fire escape', ratio: '3/4', src: 'images/galleria/grittystreetwearsewingstudio2.png' }, { title: 'After the show', ratio: '4/3', src: 'images/galleria/nyststreetweardesignstudio1.png' }] },
       { number: '01', title: 'The first edition', text: 'The collection that set the rule of forty units per piece.',
         frames: [
-          { title: 'The first sample', ratio: '4/3', src: '' }, { title: 'The first label', ratio: '3/4', src: '' },
-          { title: 'The first street shot', ratio: '3/4', src: '' }, { title: 'Launch night', ratio: '4/3', src: '' }] }
+          { title: 'The first sample', ratio: '4/3', src: 'images/galleria/moodystreetweardesignstudio1.png' }, { title: 'The first label', ratio: '3/4', src: 'images/galleria/nyststreetwearatelierworkshop3.png' },
+          { title: 'The first street shot', ratio: '3/4', src: 'images/galleria/studiostylingsessionwithoversizedstreetwear2.png' }, { title: 'Launch night', ratio: '4/3', src: 'images/galleria/grittynyststreetwearrunwayshow4.png' }] }
     ],
     celebrities: [
-      { name: 'Celebrity name', what: 'Posted the black hoodie', where: 'Instagram story', date: 'September 2026', link: '', src: '' },
-      { name: 'Celebrity name', what: 'Wore the cargo pants', where: 'A public event', date: 'September 2026', link: '', src: '' },
-      { name: 'Celebrity name', what: 'Posted the bucket hat', where: 'TikTok', date: 'August 2026', link: '', src: '' },
-      { name: 'Celebrity name', what: 'Wore the grey washed hoodie', where: 'A street photo', date: 'August 2026', link: '', src: '' },
-      { name: 'Celebrity name', what: 'Posted the white tee', where: 'Instagram', date: 'July 2026', link: '', src: '' },
-      { name: 'Celebrity name', what: 'Wore the beanie', where: 'A public event', date: 'July 2026', link: '', src: '' }
+      { name: 'Kanye West', what: '', where: 'Paparazzi spotted', date: '', link: '', src: 'images/Celebs/paparazziarrivalinnysthoodie.png' },
+      { name: 'Sydney Sweeny', what: '', where: ' IG Post', date: '', link: '', src: 'images/Celebs/streetwearselfieinthecar.png' },
+      { name: 'WestCol', what: '', where: 'Stream spotted', date: '', link: '', src: 'images/Celebs/neonstreamerroomwithcozyfiredisplay.png' },
+      { name: 'Aria Vega', what: '', where: 'Paparazzi spotted', date: '', link: '', src: 'images/Celebs/nighttimeurbanentranceportrait.png' },
+      { name: 'Paco Amoroso', what: '', where: 'I-D Interview', date: '', link: '', src: 'images/Celebs/pacoamorosoidstudioportrait.png' },
+      { name: 'Feid', what: '', where: 'concert outfit', date: '', link: '', src: 'images/Celebs/neonnystconcertperformance.png' }
     ]
   },
   archive: [
@@ -257,7 +257,7 @@ function placeholder(kind, i) {
 const FRAMES = { runways: [], stories: [], celebs: [] };
 CONFIG.gallery.runways.forEach((f, i) => { f.kind = 'runways'; f._i = i; f.caption = 'Runway'; FRAMES.runways.push(f); });
 CONFIG.gallery.storylines.forEach(s => s.frames.forEach(f => { f.kind = 'stories'; f._i = FRAMES.stories.length; f.caption = `Collection ${s.number}, ${s.title}`; FRAMES.stories.push(f); }));
-CONFIG.gallery.celebrities.forEach((c, i) => { c.kind = 'celebs'; c._i = i; c.title = c.name; c.caption = `${c.what}, ${c.where}`; c.ratio = '4/5'; FRAMES.celebs.push(c); });
+CONFIG.gallery.celebrities.forEach((c, i) => { c.kind = 'celebs'; c._i = i; c.title = c.name; c.caption = [c.what, c.where].filter(Boolean).join(', '); c.ratio = '4/5'; FRAMES.celebs.push(c); });
 const galleryMedia = g => g.src ? `<img src="${esc(g.src)}" alt="${esc(g.title)}" loading="lazy">` : placeholder(g.kind, g._i);
 
 /* ================================================================ State */
@@ -514,7 +514,7 @@ function renderGallery() {
   const rots = [-2.6, 1.6, -1, 2.2, -1.8, 1.2];
   $('#spotGrid').innerHTML = FRAMES.celebs.map((c, i) => `<article class="spot" style="--rot:${rots[i % rots.length]}deg">
     <button class="spot-photo" type="button" data-cursor="big" data-action="lightbox" data-kind="celebs" data-i="${c._i}" aria-label="Open the photo of ${esc(c.name)}">${galleryMedia(c)}<span class="stamp">Spotted</span></button>
-    <h3>${esc(c.name)}</h3><p>${esc(c.what)}</p><p>${esc(c.where)}, ${esc(c.date)}</p>
+    <h3>${esc(c.name)}</h3>${c.what ? `<p>${esc(c.what)}</p>` : ''}${c.where || c.date ? `<p>${[c.where, c.date].filter(Boolean).map(esc).join(', ')}</p>` : ''}
     ${c.link ? `<a href="${esc(c.link)}" target="_blank" rel="noopener noreferrer">View the post</a>` : ''}</article>`).join('');
   renderTabs();
   railUpdate($('#runRail'));
